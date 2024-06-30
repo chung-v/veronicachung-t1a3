@@ -1,0 +1,29 @@
+[
+    {
+        "Recipe name": "Egg fried rice",
+        "Cuisine": "Chinese",
+        "Ingedients": ["rice", "egg", "garlic", "spring onion", "soy sauce", "vegetable oil", "sesame oil"],
+        "Instructions": [
+            "Prep the ingedients. Mince 2 garlic cloves. Chop 2 spring onions.",
+            "Heat up 2 tbsp vegetable oil in pan.",
+            "Add garlic. Stir until fragrant.",
+            "Add 2 eggs. Stir until fluffy.",
+            "Add 2 cups rice. Stir.",
+            "Add 1 tbsp soy sauce and 1 tbsp sesame oil. Stir.",
+            "Add spring onion as garnish. Stir a little and serve."
+        ]
+    },
+    {
+        "Recipe name": "Aglio e Olio",
+        "Cuisine": "Italian",
+        "Ingedients": ["spaghetti", "olive oil", "garlic", "parsley"],
+        "Instructions": [
+            "Cook 2 servings of pasta until al dente.",
+            "Heat up 1/4 cup olive oil in pan.",
+            "Add the garlic. Saute till lightly golden.",
+            "Add the pasta and 1/4 cup of pasta water. Toss till evenly coated with sauce.",
+            "Season to taste.",
+            "Add parsley as garnish and serve."
+        ]
+    }
+]
