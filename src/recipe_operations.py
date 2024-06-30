@@ -13,6 +13,20 @@ class RecipeManager:
     def add_recipe(self, recipe):
         self.recipes.append(recipe)
 
+    # Method to display recipe
+    def display_recipe(self, recipe_name):
+        for recipe in self.recipes:
+            if recipe.name.lower() == recipe_name.lower():
+                print(f"Recipe: {recipe.name}")
+                print("Ingedients: ")
+                for ingredient in recipe.ingredients:
+                    print("- " + ingredient)
+                print("Instructions: ")
+                for step, instruction in enumerate(recipe.instructions, 1):
+                    print(f"{step}. {instruction}")
+                return
+        print(f"Recipe not found.")
+
 # Creating object instance for class RecipeManager
 manager = RecipeManager()
 
@@ -33,8 +47,16 @@ def add_recipe(manager):
             instructions_list.append(instructions.strip())
             instructions = input()
         
-        recipe = {"Recipe name": name, "Cuisine": cuisine, "Ingredients": ingredients_list, "Instructions": instructions_list}
+        recipe = Recipe(name, cuisine, ingredients_list, instructions_list)
         manager.add_recipe(recipe)
         print("Recipe successfully added.")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}.")
+
+# Function to display recipe
+def display_recipe(manager):
+    try:
+        recipe_name = input("Select recipe: ")
+        manager.display_recipe(recipe_name)
     except Exception as e:
         print(f"An unexpected error occurred: {e}.")
