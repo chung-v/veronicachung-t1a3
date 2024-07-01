@@ -18,12 +18,21 @@ class RecipeManager:
         for recipe in self.recipes:
             if recipe.name.lower() == recipe_name.lower():
                 print(f"Recipe: {recipe.name}")
-                print("Ingedients: ")
+                print("Ingredients: ")
                 for ingredient in recipe.ingredients:
                     print("- " + ingredient)
                 print("Instructions: ")
                 for step, instruction in enumerate(recipe.instructions, 1):
                     print(f"{step}. {instruction}")
+                return
+        print(f"Recipe not found.")
+
+    # Method to remove recipe
+    def remove_recipe(self, recipe_name):
+        for recipe in self.recipes:
+            if recipe.name.lower() == recipe_name.lower():
+                self.recipes.remove(recipe)
+                print(f"Recipe '{recipe_name}' removed.")
                 return
         print(f"Recipe not found.")
 
@@ -74,6 +83,14 @@ def display_recipe(manager):
     try:
         recipe_name = input("Select recipe: ")
         manager.display_recipe(recipe_name)
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}.")
+
+# Function to remove recipe
+def remove_recipe(manager):
+    try:
+        recipe_name = input("Enter recipe name to remove: ")
+        manager.remove_recipe(recipe_name)
     except Exception as e:
         print(f"An unexpected error occurred: {e}.")
 
