@@ -1,4 +1,4 @@
-from beaupy import select
+from beaupy import confirm, select
 
 class Recipe:
     def __init__(self, name, cuisine, ingredients, instructions):
@@ -104,11 +104,12 @@ def display_recipe(manager):
 
 # Function to remove recipe
 def remove_recipe(manager):
-    try:
-        recipe_name = input("\nEnter recipe name to remove: ")
+    recipe_names = [recipe.name for recipe in manager.recipes] # Pulling the list of saved recipes
+
+    print("\nSelect recipe to remove: ")
+    recipe_name = select(recipe_names, cursor="🢧", cursor_style="#8190BB") # Displaying list of available recipes via beaupy
+    if confirm("\nAre you sure?"): # Confirming if user wants to remove selected recipe via beaupy
         manager.remove_recipe(recipe_name)
-    except Exception as e:
-        print(f"\nUnexpected error occurred: {e}.")
 
 # Function to export recipe
 def export_recipe(manager):
