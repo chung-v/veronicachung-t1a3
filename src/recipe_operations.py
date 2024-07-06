@@ -94,6 +94,14 @@ def display_recipe(manager):
     recipe_name = select(recipe_names, cursor="🢧", cursor_style="#8190BB") # Displaying list of available recipes via beaupy
     manager.display_recipe(recipe_name) # Displaying selected recipe
 
+    # Prompt to return to main menu when user is ready
+    while True:
+        user_input = input("\nPress 'enter' to return to the main menu. ").strip().lower()
+        if user_input == "":
+            return
+        else:
+            print("Invalid input. Please press 'enter' to return to the main menu.")
+
 # Function to remove recipe
 def remove_recipe(manager):
     try:
