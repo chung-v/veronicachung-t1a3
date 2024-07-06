@@ -1,3 +1,5 @@
+from beaupy import select
+
 class Recipe:
     def __init__(self, name, cuisine, ingredients, instructions):
         self.name = name
@@ -86,11 +88,11 @@ def add_recipe(manager):
 
 # Function to display recipe
 def display_recipe(manager):
-    try:
-        recipe_name = input("\nSelect recipe: ")
-        manager.display_recipe(recipe_name)
-    except Exception as e:
-        print(f"\nUnexpected error occurred: {e}.")
+    recipe_names = [recipe.name for recipe in manager.recipes] # Pulling the list of saved recipes
+
+    print("\nSelect recipe: ")
+    recipe_name = select(recipe_names, cursor="🢧", cursor_style="#8190BB") # Displaying list of available recipes via beaupy
+    manager.display_recipe(recipe_name) # Displaying selected recipe
 
 # Function to remove recipe
 def remove_recipe(manager):
