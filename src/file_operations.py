@@ -1,32 +1,31 @@
 import json
-from recipe_operations import RecipeManager
+from recipe_operations import Recipe
 
-def load_recipe(file_path):
-    # Import pre-saved recipes from a JSON file.
-    manager = RecipeManager()
-    
+FILE_PATH = '../data/recipes.json'
+
+# Import pre-saved recipes from JSON file.
+def load_recipe(file_path, manager):
     try:
         with open(file_path, 'r') as file:
             recipes_data = json.load(file)
 
-        if recipes_data:
-            manager.import_recipes_json(recipes_data)
+            for recipe_data in recipes_data:
+                recipe = Recipe(recipe_data['name'], recipe_data['cuisine'], recipe_data['ingredients'], recipe_data['instructions']) #
+                manager.recipes.append(recipe)
 
         return manager
 
     except FileNotFoundError:
-        print(f"\nFile not found. Please check if {file_path} exists.")
+        print(f"\nFile not found. Please check if file exists.")
         return []
     except PermissionError:
         print(f"\nPermission denied to read file.")
         return []
-    except json.decoder.JSONDecodeError as e:
-        print(f"\nError decoding JSON in {file_path}: {e}.")
-        return []
     except Exception as e:
         print(f"\nUnexpected error occurred: {e}.")
         return []
-    
+
+# Export recipe updates to JSON file
 def save_recipe(file_path, manager):
     try:
         recipes_data = []

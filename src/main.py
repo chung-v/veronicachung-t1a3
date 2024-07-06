@@ -1,5 +1,5 @@
 from file_operations import load_recipe, save_recipe
-from recipe_operations import add_recipe, display_recipe, remove_recipe, export_recipe
+from recipe_operations import RecipeManager
 
 import pyfiglet
 from rich import print
@@ -7,7 +7,9 @@ from rich import print
 FILE_PATH = '../data/recipes.json'
 
 def main():
-    manager = load_recipe(FILE_PATH)
+    manager = RecipeManager()
+
+    manager = load_recipe(FILE_PATH, manager)
 
     while True:
             title = pyfiglet.figlet_format('RECIPE MANAGER', font='doom')
@@ -21,15 +23,15 @@ def main():
             choice = input("\nChoose an option: ")
 
             if choice == '1':
-                add_recipe(manager)
+                RecipeManager.add_recipe(manager)
                 save_recipe(FILE_PATH, manager)
             elif choice == '2':
-                display_recipe(manager)
+                RecipeManager.display_recipe(manager)
             elif choice == '3':
-                remove_recipe(manager)
+                RecipeManager.remove_recipe(manager)
                 save_recipe(FILE_PATH, manager)
             elif choice == '4':
-                export_recipe(manager)
+                RecipeManager.export_recipe(manager)
             elif choice == '5':
                 print("\nExiting application.")
                 break
