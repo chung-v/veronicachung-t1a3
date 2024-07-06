@@ -82,7 +82,7 @@ def add_recipe(manager):
         manager.add_recipe(recipe)
         print("\nRecipe successfully added.")
     except Exception as e:
-        print(f"\n Unexpected error occurred: {e}.")
+        print(f"\nUnexpected error occurred: {e}.")
 
 # Function to display recipe
 def display_recipe(manager):
@@ -90,7 +90,7 @@ def display_recipe(manager):
         recipe_name = input("\nSelect recipe: ")
         manager.display_recipe(recipe_name)
     except Exception as e:
-        print(f"\n Unexpected error occurred: {e}.")
+        print(f"\nUnexpected error occurred: {e}.")
 
 # Function to remove recipe
 def remove_recipe(manager):
@@ -98,7 +98,7 @@ def remove_recipe(manager):
         recipe_name = input("\nEnter recipe name to remove: ")
         manager.remove_recipe(recipe_name)
     except Exception as e:
-        print(f"\n Unexpected error occurred: {e}.")
+        print(f"\nUnexpected error occurred: {e}.")
 
 # Function to export recipe
 def export_recipe(manager):
@@ -107,4 +107,4 @@ def export_recipe(manager):
         txt_file = input("\nEnter name for txt file (e.g. 'recipe.txt'): ")
         manager.export_recipe(recipe_name, txt_file)
     except Exception as e:
-        print(f"\n Unexpected error occurred: {e}.")
+        print(f"\nUnexpected error occurred: {e}.")
