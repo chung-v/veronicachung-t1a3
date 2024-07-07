@@ -35,7 +35,8 @@ The following dependencies are required to run the application:
 - ```beaupy``` - For interactive selection and confirmation features.
 - ```pyfiglet``` - For ASCII art fonts.
 - ```rich``` - For console output formatting.
-- ```os```
+- ```os``` - For interacting with the operating system. E.g. Reading, writing and deleting files.
+- ```json``` - Interface for encoding and decoding JSON formatted data.
 
 ## Installing the Application
 1. Download and extract ```veronicachung-t1a3-main.zip```.
@@ -56,14 +57,16 @@ When the application starts up, the user is greeted with the main menu.
 
 ![terminal app main menu](./doc/main_menu.png)
 
-The title ```Recipe Manager``` is displayed using ```pyfiglet``` to ensure it stands out.
+```pyfiglet``` is used to generate ASCII art for the application name ```Recipe Manager```, to ensure it stands out to the user.
 
-One of the listed options can be selected:
+One of the listed options can be selected by entering 1-5:
 1. **Add a recipe** - Allows users to input details for a new recipe which includes name, cuisine, ingredients, and step-by-step instructions.
 2. **Select a recipe** - Displays a list of available recipes for the user to choose from. Once selected, it shows the details of the chosen recipe, including its name, cuisine, list of ingredients, and step-by-step instructions.
 3. **Remove a recipe** - Displays a list of available recipes for the user to choose from. Upon confirmation, the selected recipe is removed from the list of recipes.
 4. **Export a recipe** - Prompts the user to enter the name of the recipe they want to export. If found, it creates a ```.txt``` file with the recipe details formatted nicely, including name, cuisine, ingredients, and instructions.
 5. **Exit** - Terminates the application loop and exits the program.
+
+If the user enters a value outside the intended value (1-5), an error message pops up in red: ```"Invalid choice. Please try again."```.
 
 ### 1. Add Recipe
 User can store a new recipe into the application.
@@ -103,7 +106,7 @@ Displays a list of recipes and allows the user to select a recipe for removal.
     - If ```yes``` is selected, the recipe is removed from ```RecipeManager```.
     - If ```no``` is selected, user is returned back to the main menu.
 3. Saves updates to ```recipes.json``` using ```save_recipe```.
-4. Feedback is provided to confirm successful removal or error handling if any issues arise.
+4. Feedback is provided to confirm successful addition or error handling if any issues arise.
 
 ![terminal app remove recipe option](./doc/remove_recipe_1.gif)
 ![terminal app remove recipe confirmation](./doc/remove_recipe_2.png)
@@ -124,6 +127,19 @@ Allows user to export a recipe as a ```.txt``` file.
 
 ### 5. Exit
 Terminates the application loop and exits the program. All active interfaces are closed and the user returns control to the command line or shell.
+
+### Error Handling
+Error messages have been styled in red using ```rich``` to emphasise the error. Red was chosen as it is commonly associated with errors, making it easier for the user to understand the issue and retry.
+
+```if-else``` statements were used to detect error situations. When an ```if```condition identifies an error,  ```elif``` and ```else``` blocks provide an alternative path for executing code. This logic controls the flow of execution, ensuring the application can manage errors.
+
+Additionally, exception handling using ```try``` and ```except``` blocks were used extensively throughout the code to gracefully respond to unexpected errors. 
+
+#### Example of implemented error handling code:
+![error handling code](./doc/error_handling.png)
+
+#### Example of error handling message on the console:
+![how error handling is displayed on the console](./doc/error_handling_console.png)
 
 ## Implementation Plan
 Trello was utilised to plan the project. Each task included a checklist to ensure all aspects of the project were covered. Deadlines were determined based on the importance of the files required to run the basic application.
