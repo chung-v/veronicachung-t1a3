@@ -21,6 +21,9 @@ def load_recipe(file_path, manager):
     except PermissionError:
         print(f"\nPermission denied to read file.")
         return []
+    except json.JSONDecodeError:
+        print(f"\nError decoding JSON from file.")
+        return []
     except Exception as e:
         print(f"\nUnexpected error occurred: {e}.")
         return []
@@ -43,7 +46,10 @@ def save_recipe(file_path, manager):
             json.dump(recipes_data, file, indent=4)
 
         print(f"\nRecipe book has been successfully updated.")
+
     except PermissionError:
         print(f"\nPermission denied to write file.")
+    except json.JSONDecodeError:
+        print(f"\nError encoding JSON data to file.")
     except Exception as e:
         print(f"\nUnexpected error occurred: {e}.")
