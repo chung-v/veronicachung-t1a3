@@ -19,7 +19,7 @@ def main():
             print("[#8190BB]4.[/] Export a recipe")
             print("[#8190BB]5.[/] Exit")
 
-            choice = input("\nChoose an option: ")
+            choice = input("\nChoose an option (1-5): ")
 
             if choice == '1':
                 RecipeManager.add_recipe(manager) # Calls method to add a new recipe
@@ -35,7 +35,7 @@ def main():
                 print("\nExiting application.")
                 break # Exits the while loop and ending the program
             else:
-                print("\nInvalid choice. Please try again.")
+                print("[red3]\nInvalid choice. Please try again.[/]") # Emphasise error handling message in red using rich
 
 if __name__ == "__main__":
     main() # Calls main function when script is executed directly

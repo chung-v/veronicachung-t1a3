@@ -1,5 +1,6 @@
 import os
 from beaupy import confirm, select
+from rich import print
 
 class Recipe: # Class to store recipe attributes
     def __init__(self, name, cuisine, ingredients, instructions):
@@ -29,9 +30,9 @@ class RecipeManager: # Class to manage a collection of recipes
             recipe = Recipe(name, cuisine, ingredients_list, instructions_list) # Creates new Recipe object based on user input
             self.recipes.append(recipe) # Adds recipe
             print("\nRecipe successfully added.")
-        # Error handling
+        # Emphasise error handling message in red using rich
         except Exception as e:
-            print(f"\nUnexpected error occurred: {e}.")
+            print(f"[red3]\nUnexpected error occurred: {e}.[/]")
         
     # Method to display recipe
     def display_recipe(self):
@@ -52,9 +53,9 @@ class RecipeManager: # Class to manage a collection of recipes
             user_input = input("\nPress 'enter' to return to the main menu. ") # Prompt to return to main menu when user is ready
             if user_input == "":
                 return
-        # Error handling
+        # Emphasise error handling message in red using rich
         except Exception as e:
-            print(f"\nUnexpected error occurred: {e}.")
+            print(f"[red3]\nUnexpected error occurred: {e}.[/]")
         
     # Method to remove recipe
     def remove_recipe(self):
@@ -68,11 +69,11 @@ class RecipeManager: # Class to manage a collection of recipes
                         self.recipes.remove(recipe) # Removes recipe
                 print(f"\nRecipe '{recipe_name}' removed.")
             else:
-                print("\Recipe removal cancelled.")
+                print("[red3]\Recipe removal cancelled.[/]") # Emphasise error handling message in red using rich
             return
-        # Error handling
+        # Emphasise error handling message in red using rich
         except Exception as e:
-            print(f"\nUnexpected error occurred: {e}.")
+            print(f"[red3]\nUnexpected error occurred: {e}.[/]")
 
     # Method to export recipe
     def export_recipe(self):
@@ -96,12 +97,12 @@ class RecipeManager: # Class to manage a collection of recipes
                                 file.write(f"{step}. {instruction}\n")
                         print(f"\nRecipe '{recipe_name}' exported to {txt_file}.")
                     else:
-                        print("\nRecipe export cancelled.")
+                        print("[red3]\nRecipe export cancelled.[/]") # Emphasise error handling message in red using rich
                     break
             else:
-                print("\nRecipe not found.")
-        # Error handling
+                print("[red3]\nRecipe not found.[/]")
+        # Emphasise error handling message in red using rich
         except FileNotFoundError:
-            print(f"\nFile not found. Please check if file exists.")
+            print(f"[red3]\nFile not found. Please check if file exists.[/]")
         except Exception as e:
-            print(f"\nUnexpected error occurred: {e}.")
+            print(f"[red3]\nUnexpected error occurred: {e}.[/]")
