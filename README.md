@@ -35,6 +35,7 @@ The following dependencies are required to run the application:
 - ```beaupy``` - For interactive selection and confirmation features.
 - ```pyfiglet``` - For ASCII art fonts.
 - ```rich``` - For console output formatting.
+- ```os```
 
 ## Installing the Application
 1. Download and extract ```veronicachung-t1a3-main.zip```.
@@ -124,3 +125,24 @@ Allows user to export a recipe as a ```.txt``` file.
 Terminates the application loop and exits the program. All active interfaces are closed and the user returns control to the command line or shell.
 
 ## Implementation Plan
+Trello was utilised to plan the project. Each task included a checklist to ensure all aspects of the project were covered. Deadlines were determined based on the importance of the files required to run the basic application.
+
+A snapshot of the progress made at different points in time can be seen below.
+
+### Progress made by 27/06/24
+![Trello progress on 27/06_1](./doc/trello_2706_1.png)
+![Trello progress on 27/06_2](./doc/trello_2706_2.png)
+
+### Progress made by 01/07/24
+![alt text](doc/trello_0107_1.png)
+![alt text](doc/trello_0107_2.png)
+![alt text](doc/trello_0107_3.png)
+
+### Progress made by 07/07/24
+![alt text](doc/trello_0707_1.png)
+
+## References
+- https://peps.python.org/pep-0020/
+- https://pypi.org/project/beaupy/
+- https://pypi.org/project/pyfiglet/
+- https://pypi.org/project/rich/
