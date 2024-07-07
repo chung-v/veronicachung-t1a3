@@ -12,12 +12,6 @@ class RecipeManager:
     def __init__(self):
         self.recipes = []
 
-    # Method to import pre-saved recipes from JSON file
-    def import_recipes_json(self, recipes_data):
-        for recipe_data in recipes_data:
-            recipe = Recipe(recipe_data['name'], recipe_data['cuisine'], recipe_data['ingredients'], recipe_data['instructions']) #
-            self.recipes.append(recipe)
-
     # Method to add recipe
     def add_recipe(self):
         try:

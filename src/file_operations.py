@@ -1,9 +1,7 @@
 import json
 from recipe_operations import Recipe
 
-FILE_PATH = '../data/recipes.json'
-
-# Import pre-saved recipes from JSON file.
+# Function to import pre-saved recipes from JSON file.
 def load_recipe(file_path, manager):
     try:
         with open(file_path, 'r') as file:
@@ -28,7 +26,7 @@ def load_recipe(file_path, manager):
         print(f"\nUnexpected error occurred: {e}.")
         return []
 
-# Export recipe updates to JSON file
+# Function to export recipe updates to JSON file
 def save_recipe(file_path, manager):
     try:
         recipes_data = []
