@@ -92,7 +92,7 @@ Displays a list of recipes loaded in ```RecipeManager```. Allows users to view t
     - Cuisine
     - Ingredients (listed)
     - Instructions (numbered)
-3. After viewing the recipe details, the user can return to the main menu by pressing enter.
+3. After viewing the recipe details, the user can return to the main menu by pressing enter. The select recipe option is the only option that does not return automatically to the menu, to allow the user to read through the displayed recipe at their own pace.
 
 ![terminal app select recipe option](./doc/select_recipe_1.gif)
 ![terminal app display selected recipe](./doc/select_recipe_2.png)
@@ -133,7 +133,7 @@ Error messages have been styled in red using ```rich``` to emphasise the error. 
 
 ```if-else``` statements were used to detect error situations. When an ```if```condition identifies an error,  ```elif``` and ```else``` blocks provide an alternative path for executing code. This logic controls the flow of execution, ensuring the application can manage errors.
 
-Additionally, exception handling using ```try``` and ```except``` blocks were used extensively throughout the code to gracefully respond to unexpected errors. 
+Additionally, exception handling using ```try``` and ```except``` blocks were used extensively throughout the code to gracefully respond to unexpected errors.
 
 #### Example of implemented error handling code:
 ![error handling code](./doc/error_handling.png)
