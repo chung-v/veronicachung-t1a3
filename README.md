@@ -48,6 +48,7 @@ The following dependencies are required to run the application:
     - Change directory to the folder that contains the application ```cd src```.
     - Run the [main application](#features).
     - Deactivate the virtual environment when exiting.
+4. Should there be an error executing the file, enter ```chmod +x run.sh``` and then try step 3 again.
 
 ## Features
 ### Main Menu
