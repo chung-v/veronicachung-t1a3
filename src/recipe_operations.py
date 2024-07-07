@@ -73,6 +73,8 @@ class RecipeManager:
                     if recipe.name.lower() == recipe_name.lower(): # Checks if entered recipe name matches a name in the recipe book, ignoring case-sensitivity
                         self.recipes.remove(recipe) # Removes recipe
                 print(f"\nRecipe '{recipe_name}' removed.")
+            else:
+                print("\Recipe removal cancelled.")
             return
 
         except Exception as e:
@@ -100,7 +102,7 @@ class RecipeManager:
                                 file.write(f"{step}. {instruction}\n")
                         print(f"\nRecipe '{recipe_name}' exported to {txt_file}.")
                     else:
-                        print("\nExport operation cancelled.")
+                        print("\nRecipe export cancelled.")
                     break
             else:
                 print("\nRecipe not found.")

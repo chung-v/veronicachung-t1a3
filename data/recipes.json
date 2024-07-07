@@ -3,12 +3,12 @@
         "name": "Egg fried rice",
         "cuisine": "Chinese",
         "ingredients": [
-            "rice", 
-            "egg", 
-            "garlic", 
-            "spring onion", 
-            "soy sauce", 
-            "vegetable oil", 
+            "rice",
+            "egg",
+            "garlic",
+            "spring onion",
+            "soy sauce",
+            "vegetable oil",
             "sesame oil"
         ],
         "instructions": [
@@ -25,9 +25,9 @@
         "name": "Aglio e Olio",
         "cuisine": "Italian",
         "ingredients": [
-            "spaghetti", 
-            "olive oil", 
-            "garlic", 
+            "spaghetti",
+            "olive oil",
+            "garlic",
             "parsley"
         ],
         "instructions": [
@@ -37,6 +37,29 @@
             "Add the pasta and 1/4 cup of pasta water. Toss till evenly coated with sauce.",
             "Season to taste.",
             "Add parsley as garnish and serve."
+        ]
+    },
+    {
+        "name": "Spicy Garlic Shrimp",
+        "cuisine": "Asian",
+        "ingredients": [
+            "shrimp",
+            "garlic",
+            "soy sauce",
+            "oyster sauce",
+            "siracha sauce",
+            "vegetable oil",
+            "sugar",
+            "spring onion",
+            "rice"
+        ],
+        "instructions": [
+            "Cook two servings of rice.",
+            "Prep the marinade. Combine 3 cloves garlic, 1 tbsp soy sauce, 1 tbsp oyster sauce and 1 tbsp siracha sauce.",
+            "Marinate 400g shrimp for 15-20 minutes.",
+            "Heat up 1tbsp vegetable oil over medium-high heat.",
+            "Cook the shrimp for 2-3 minutes on each side, until the shrimp turn pink and opaque.",
+            "Garnish with chopped spring onions and serve with rice."
         ]
     }
 ]
