@@ -1,16 +1,16 @@
 import os
 from beaupy import confirm, select
 
-class Recipe:
+class Recipe: # Class to store recipe attributes
     def __init__(self, name, cuisine, ingredients, instructions):
         self.name = name
         self.cuisine = cuisine
         self.ingredients = ingredients
         self.instructions = instructions
 
-class RecipeManager:
+class RecipeManager: # Class to manage a collection of recipes
     def __init__(self):
-        self.recipes = []
+        self.recipes = [] #  Initialises empty list to store Recipe objects
 
     # Method to add recipe
     def add_recipe(self):
@@ -29,7 +29,7 @@ class RecipeManager:
             recipe = Recipe(name, cuisine, ingredients_list, instructions_list) # Creates new Recipe object based on user input
             self.recipes.append(recipe) # Adds recipe
             print("\nRecipe successfully added.")
-
+        # Error handling
         except Exception as e:
             print(f"\nUnexpected error occurred: {e}.")
         
@@ -52,7 +52,7 @@ class RecipeManager:
             user_input = input("\nPress 'enter' to return to the main menu. ") # Prompt to return to main menu when user is ready
             if user_input == "":
                 return
-
+        # Error handling
         except Exception as e:
             print(f"\nUnexpected error occurred: {e}.")
         
@@ -70,7 +70,7 @@ class RecipeManager:
             else:
                 print("\Recipe removal cancelled.")
             return
-
+        # Error handling
         except Exception as e:
             print(f"\nUnexpected error occurred: {e}.")
 
@@ -100,7 +100,7 @@ class RecipeManager:
                     break
             else:
                 print("\nRecipe not found.")
-
+        # Error handling
         except FileNotFoundError:
             print(f"\nFile not found. Please check if file exists.")
         except Exception as e:
